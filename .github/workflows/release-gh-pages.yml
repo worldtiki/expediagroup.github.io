@@ -41,12 +41,4 @@ jobs:
           npm run build
 
       - name: Validate content of cname file
-        run: cat CNAME | grep opensource.expediagroup.com
-
-      - name: Release to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
-          user_name: eg-oss-ci
-          user_email: oss@expediagroup.com
+        run: cat ./build/CNAME | grep opensource.expediagroup.com
